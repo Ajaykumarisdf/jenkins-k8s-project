@@ -1,5 +1,5 @@
 pipeline {
-    agent any
+    agent { label 'master' }
 
     environment {
         // Define your DockerHub credentials ID here (create this in Jenkins Credentials)
