@@ -41,7 +41,7 @@ pipeline {
                 sh "sed -i 's|DOCKER_IMAGE_PLACEHOLDER|${DOCKER_IMAGE}:${IMAGE_TAG}|g' k8s-manifest.yaml"
                 // 2. Apply to Kubernetes
                 sh "cd /home/ubuntu/jenkins-k8s-project"
-                sh "kubectl apply -f k8s-manifest.yaml"
+                sh "sudo kubectl apply -f k8s-manifest.yaml"
             }
         }
     }
