@@ -40,6 +40,7 @@ pipeline {
                 // 1. Replace the placeholder in the yaml with the actual built image tag
                 sh "sed -i 's|DOCKER_IMAGE_PLACEHOLDER|${DOCKER_IMAGE}:${IMAGE_TAG}|g' k8s-manifest.yaml"
                 // 2. Apply to Kubernetes
+                sh "cd /home/ubuntu/jenkins-k8s-project"
                 sh "kubectl apply -f k8s-manifest.yaml"
             }
         }
